@@ -1,0 +1,60 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-green {
+    background-color: #1eae98;
+    color:white;
+}
+
+.mat-white {
+    background-color: #fff;
+    color:black;
+}
+
+.mat-header {
+    background-color: #393e46;
+    color:white;
+}
+
+.icon {
+  display: none;
+}
+
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+}
+
+mat-sidenav {
+    width: 350px;
+    background-color: #393e46;
+    color:white;
+}
+
+mat-nav-list a {
+    color: white;
+}
+
+mat-nav-list a:hover, a:active {
+    color: lightgray;
+}
+
+.nav-caption {
+    display: inline-block;
+}
+
+main {
+    padding: 10px;
+}
+
+.menu {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .navbar a:not(:first-child) {display: none;}
+  .navbar button:not(:last-child) {display: none;}
+  .navbar input {display: none;}
+
+  .menu {display: block;}
+}

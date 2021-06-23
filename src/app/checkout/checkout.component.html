@@ -1,0 +1,88 @@
+<div *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!isLoading">
+    <div class="cartTable">
+        <h1 style="margin-top: 5%; font-weight: 500;">Checkout</h1>
+    
+        <div *ngIf="cartTotalLength">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="product">
+                    <th mat-header-cell *matHeaderCellDef> Product </th>
+                    <td mat-cell *matCellDef="let element"> {{element.product}} </td>
+                    <td mat-footer-cell *matFooterCellDef> Total </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef> Price </th>
+                    <td mat-cell *matCellDef="let element"> {{element.price | currency}} </td>
+                    <td mat-footer-cell *matFooterCellDef></td>
+                </ng-container>
+    
+                <ng-container matColumnDef="quantity">
+                    <th mat-header-cell *matHeaderCellDef> Quantity </th>
+                    <td mat-cell *matCellDef="let element"> {{element.quantity}}</td>
+                    <td mat-footer-cell *matFooterCellDef> {{cartTotalLength}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="total">
+                    <th mat-header-cell *matHeaderCellDef> Total </th>
+                    <td mat-cell *matCellDef="let element"> {{element.total | currency}} </td>
+                    <td mat-footer-cell *matFooterCellDef> {{totalPrice | currency}} </td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="shipping-detail" style="background-color:white; margin-top:20px;">
+        <mat-card>
+            <h1 style="text-align: center; justify-content: center;">Shipping details</h1>
+            <form [formGroup]="shippingForm" (ngSubmit)="onSubmit()">
+                <mat-form-field class="formField" appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput type="text" placeholder="" name="first-name" formControlName="first_name">
+                </mat-form-field>
+                <mat-form-field class="formField" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput type="text" placeholder="" name="last-name" formControlName="last_name">
+                </mat-form-field>
+                <mat-form-field class="formField" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" placeholder="" name="email" formControlName="email">
+                </mat-form-field>
+                <mat-form-field class="formField" appearance="outline">
+                    <mat-label>Phone</mat-label>
+                    <input matInput type="text" placeholder="" name="phone" formControlName="phone">
+                </mat-form-field>
+                <mat-form-field class="formField" appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <input matInput type="text" placeholder="" name="address" formControlName="address">
+                </mat-form-field>
+                <mat-form-field class="formField" appearance="outline">
+                    <mat-label>Zipcode</mat-label>
+                    <input matInput type="text" placeholder="" name="zipcode" formControlName="zipcode">
+                </mat-form-field>
+                <mat-form-field class="formField" appearance="outline">
+                    <mat-label>Place</mat-label>
+                    <input matInput type="text" placeholder="" name="place" formControlName="place">
+                </mat-form-field>
+                <br>
+                <h1 style="text-align: center; justify-content: center;">Payment details</h1>
+                <mat-divider></mat-divider>
+                <br>
+                <div id="card-info" #cardInfo></div>
+                <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
+                <br>
+                <mat-divider></mat-divider>
+                <button mat-raised-button type="submit" color="dark" style="margin: 4% 0 0 2%; color:white; ">Pay with
+                    Strip</button>
+            </form>
+        </mat-card>
+    
+    </div>
+
+</div>

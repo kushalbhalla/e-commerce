@@ -1,0 +1,15 @@
+<div>
+    <div class="heading">
+        <h2 class="title">
+            Searched item : {{query}}
+        </h2>
+    </div>
+        <div>
+            <app-product-item 
+            *ngFor="let productEl of searchedProducts; let i = index" 
+            [product]="productEl" 
+            [index]="i">
+            </app-product-item>
+        </div>
+</div>
+

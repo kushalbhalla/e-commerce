@@ -1,0 +1,45 @@
+<div class="signupForm" style="background-color:white" >
+    <mat-card>
+      <h1 style="text-align: center; justify-content: center;">Sign Up</h1>  
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>Username</mat-label>
+                <input 
+                matInput 
+                type="text" 
+                placeholder=""
+                ngModel
+                name="username"
+                required
+                username>
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 100%">
+                <mat-label>Email</mat-label>
+                <input 
+                matInput 
+                type="email"
+                placeholder=""
+                ngModel
+                name="email"
+                required
+                >
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 100%">
+                <mat-label>Password</mat-label>
+                <input 
+                matInput 
+                type="password"
+                placeholder=""
+                ngModel
+                name="password"
+                required
+                minlength="6"
+                >
+            </mat-form-field>
+            <button mat-raised-button style="width: 100%;" type="submit" color="primary" [disabled]="!f.valid">Sign Up</button>
+        </form>
+    </mat-card>
+    <mat-card style="margin-top: 5%; text-align: center; justify-content: center;">
+        <span>Have an account? <button mat-button type="button" routerLink="/login">Login</button> </span>
+    </mat-card>
+</div>

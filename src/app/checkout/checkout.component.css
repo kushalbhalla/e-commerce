@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+}
+
+.mat-dark {
+    background-color: #000000;
+    color:black;
+}
+
+.cartTable{
+  margin-left: 5%;
+  width: 90%;
+}
+
+.formField {
+    margin-left: 2%;
+ width: 48%;
+}
+
+.shipping-detail {
+  margin-left: 5%;
+  width: 90%;
+}
+
+#card-info {
+  height: 10%;
+}

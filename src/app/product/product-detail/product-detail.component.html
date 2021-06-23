@@ -1,0 +1,18 @@
+<div class="product-detail">
+    <ng-template [ngIf]="isProduct">
+        <div class="product-info" style="float: left; width: 70%;">
+            <img [src]="product.get_image" alt="{{product.name}}">
+            <h1 style="margin-top: 5%; font-weight: 550;">{{ product.name }}</h1>
+            <p style="margin: 0 5% 5% 0; font-size: 20px;">{{ product.description }}</p>
+        </div>
+        <div class="buy-section">
+            <p style="font-size: 30px;">Information</p>
+            <p style="font-size: 20px;"><strong style="font-weight: 500;">Price: </strong>${{ product.price }}</p>
+    
+            <div class="control">
+                <input style="border: radius 3px; height: 30px;" type="text" min="1" value="1" [(ngModel)]="quantity">
+                <button style="margin-left: 10px; width: 150px;" mat-raised-button color="accent" (click)="onAddCart()">Add Cart</button>
+            </div>
+        </div>
+    </ng-template>
+</div>

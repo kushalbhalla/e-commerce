@@ -1,0 +1,12 @@
+<div *ngIf="categoryData">
+    <div class="heading">
+        <h2 class="title">
+            {{categoryData.name}}
+        </h2>
+    </div>
+    <app-product-item 
+        *ngFor="let productEl of categoryData.products; let i = index" 
+        [product]="productEl" 
+        [index]="i">
+    </app-product-item>
+</div>

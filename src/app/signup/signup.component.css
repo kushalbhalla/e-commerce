@@ -1,0 +1,12 @@
+.signupForm{
+    width: 400px;
+  height: auto;
+  border-radius: 5px;
+  border-width: 3px;
+  border-color: black;
+  background-color: snow;
+  position: relative;
+  margin: 10% 0 10% 0%;
+  left: 50%;
+  transform: translateX(-50%)
+}
